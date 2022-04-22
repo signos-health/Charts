@@ -17,6 +17,10 @@ open class MoveViewJob: ViewPortJob
 {
     open override func doJob()
     {
+        guard let transformer = transformer, let viewPortHandler = viewPortHandler, let view = view else {
+            return
+        }
+
         var pt = CGPoint(
             x: xValue,
             y: yValue

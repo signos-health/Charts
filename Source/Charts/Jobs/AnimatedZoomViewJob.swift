@@ -62,6 +62,10 @@ open class AnimatedZoomViewJob: AnimatedViewPortJob
     
     internal override func animationUpdate()
     {
+        guard let transformer = transformer, let viewPortHandler = viewPortHandler, let view = view else {
+            return
+        }
+
         let scaleX = xOrigin + (self.scaleX - xOrigin) * phase
         let scaleY = yOrigin + (self.scaleY - yOrigin) * phase
         
@@ -84,6 +88,10 @@ open class AnimatedZoomViewJob: AnimatedViewPortJob
     
     internal override func animationEnd()
     {
+        guard let view = view else {
+            return
+        }
+
         (view as? BarLineChartViewBase)?.calculateOffsets()
         view.setNeedsDisplay()
     }
