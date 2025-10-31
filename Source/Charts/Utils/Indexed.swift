@@ -22,29 +22,29 @@ public struct IndexedCollection<Base: Collection> {
 
 extension IndexedCollection: Collection {
   /// The element type for an `IndexedCollection` collection.
-  typealias Element = (index: Base.Index, element: Base.Element)
+  public typealias Element = (index: Base.Index, element: Base.Element)
   
-  var startIndex: Base.Index {
+  public var startIndex: Base.Index {
     base.startIndex
   }
   
-  var endIndex: Base.Index {
+  public var endIndex: Base.Index {
     base.endIndex
   }
   
-  subscript(position: Base.Index) -> Element {
+  public subscript(position: Base.Index) -> Element {
     (index: position, element: base[position])
   }
   
-  func index(after i: Base.Index) -> Base.Index {
+  public func index(after i: Base.Index) -> Base.Index {
     base.index(after: i)
   }
   
-  func index(_ i: Base.Index, offsetBy distance: Int) -> Base.Index {
+  public func index(_ i: Base.Index, offsetBy distance: Int) -> Base.Index {
     base.index(i, offsetBy: distance)
   }
   
-  func index(
+  public func index(
     _ i: Base.Index,
     offsetBy distance: Int,
     limitedBy limit: Base.Index
@@ -52,11 +52,11 @@ extension IndexedCollection: Collection {
     base.index(i, offsetBy: distance, limitedBy: limit)
   }
   
-  func distance(from start: Base.Index, to end: Base.Index) -> Int {
+  public func distance(from start: Base.Index, to end: Base.Index) -> Int {
     base.distance(from: start, to: end)
   }
   
-  var indices: Base.Indices {
+  public var indices: Base.Indices {
     base.indices
   }
 }
