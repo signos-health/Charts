@@ -11,7 +11,6 @@
 
 import Foundation
 import CoreGraphics
-import RealModule
 
 extension Comparable
 {
