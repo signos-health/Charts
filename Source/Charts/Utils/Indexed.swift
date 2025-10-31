@@ -11,11 +11,11 @@
 
 /// A collection wrapper that iterates over the indices and elements of a
 /// collection together.
-struct IndexedCollection<Base: Collection> {
+public struct IndexedCollection<Base: Collection> {
   /// The base collection.
   let base: Base
   
-  init(base: Base) {
+  public init(base: Base) {
     self.base = base
   }
 }
@@ -95,7 +95,7 @@ extension Collection {
   ///     }
   ///
   /// Returns: A collection of paired indices and elements of this collection.
-  func indexed() -> IndexedCollection<Self> {
+  public func indexed() -> IndexedCollection<Self> {
     IndexedCollection(base: self)
   }
 }
